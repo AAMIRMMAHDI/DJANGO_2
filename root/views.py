@@ -6,7 +6,7 @@ from .forms import ContactForm
 def home(request):
     experiences = Experience.objects.all().order_by('-start_date')
     educations = Education.objects.all().order_by('-start_date')
-    stats = Statistic.objects.first()
+    stats = Statistic.objects.first() if Statistic.objects.exists() else None
     faqs = FAQ.objects.filter(is_active=True)
     services = Service.objects.all()
     if request.method == 'POST':

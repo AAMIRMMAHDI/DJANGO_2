@@ -1,12 +1,10 @@
 from django.db import models
 
-class Statistic(models.Model):
-    years_experience = models.PositiveIntegerField(default=0)
-    projects_completed = models.PositiveIntegerField(default=0)
-    happy_clients = models.PositiveIntegerField(default=0)
+from django.db import models
 
-    def __str__(self):
-        return f"Statistics: {self.years_experience} Years, {self.projects_completed} Projects, {self.happy_clients} Clients"
+class Statistic(models.Model):
+    visits = models.IntegerField(default=0)
+
 
 
 class FAQ(models.Model):

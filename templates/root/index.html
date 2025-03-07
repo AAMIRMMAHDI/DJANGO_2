@@ -193,15 +193,6 @@
           </div>
           <div class="col-lg-8">
             <div class="row g-4">
-              {% for service in services %}
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-item">
-                  <i class="bi {{ service.icon }} icon"></i>
-                  <h3><a href="{{ service.link }}">{{ service.title }}</a></h3>
-                  <p>{{ service.description }}</p>
-                </div>
-              </div>
-              {% endfor %}
             </div>
           </div>
         </div>
@@ -223,15 +214,6 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="faq-container">
-              {% for faq in faqs %}
-              <div class="faq-item">
-                <h3>{{ faq.question }}</h3>
-                <div class="faq-content">
-                  <p>{{ faq.answer }}</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div>
-              {% endfor %}
             </div>
           </div>
         </div>
@@ -271,7 +253,7 @@
             <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
               <div class="card-body p-4 p-lg-5">
                 <form method="post" action="{% url 'root:home' %}">
-                  {% csrf_token %}
+
                   <div class="row gy-4">
                     <div class="col-12">
                       <input type="text" name="name" class="form-control" placeholder="Your Name" required>

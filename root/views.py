@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Statistic, FAQ, ContactMessage, Service, Experience, Education
+from .models import FAQ, ContactMessage, Service, Experience, Education
 from .forms import ContactForm
 
 def home(request):
-    stats = Statistic.objects.first()
     faqs = FAQ.objects.filter(is_active=True)
     services = Service.objects.all()
     experiences = Experience.objects.all()
@@ -18,7 +17,6 @@ def home(request):
         form = ContactForm()
 
     context = {
-        'stats': stats,
         'faqs': faqs,
         'services': services,
         'experiences': experiences,
